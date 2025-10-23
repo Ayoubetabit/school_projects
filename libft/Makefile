@@ -1,9 +1,10 @@
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-SRC = ft_ascii.c ft_isprint.c ft_isalpha.c ft_strlen.c
+SRC = ft_ascii.c ft_isprint.c ft_isalpha.c ft_strlen.c ft_strmapi.c
 OBJECTS = $(SRC:.c=.o)
 HEADER = libft.h
+
 
 all: $(NAME)
 $(NAME): $(OBJ)

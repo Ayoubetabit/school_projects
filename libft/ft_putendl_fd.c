@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atabit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 10:12:28 by atabit            #+#    #+#             */
-/*   Updated: 2025/10/22 23:23:59 by atabit           ###   ########.fr       */
+/*   Created: 2025/10/22 23:08:26 by atabit            #+#    #+#             */
+/*   Updated: 2025/10/22 23:10:33 by atabit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#ifndef LIBFT_H
-#define LIBFT_H
+void	ft_putstr_fd(char *s, int fd)
+{
+	size_t  i;
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-int		ft_isascii(int x);
-int		ft_isprint(int x);
-int		ft_isalpha(int c);
-size_t	ft_strlen(const char *str);
-void ft_putstr_fd(char *s, int fd);
-
-#endif
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd, '\n', 1);
+}

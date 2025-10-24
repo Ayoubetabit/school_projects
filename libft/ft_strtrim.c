@@ -9,16 +9,7 @@
 /*   Updated: 2025/10/21 10:32:32 by atabit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-static size_t	ft_strlen(char const *str)
-{
-	size_t	l;
-
-	l = 0;
-	while (str[l])
-		l ++;
-	return (l);
-}
+#include "libft.h"
 
 static int	exist(char const *set, char c)
 {

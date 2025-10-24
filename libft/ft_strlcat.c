@@ -9,18 +9,7 @@
 /*   Updated: 2025/10/17 21:25:13 by atabit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-static	size_t	ft_strlen(char *src)
-{
-	size_t	l;
-
-	l = 0;
-	while (src[l])
-	{
-		l++;
-	}
-	return (l);
-}
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -33,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	srcl = ft_strlen(src);
 	if (dstl >= size)
 		return (srcl + size);
-	while (src[i] && (size + 1 > dstl + i))
+	while (src[i] && (dstl + i + 1 < size))
 	{
 		dst[dstl + i] = src[i];
 		i++;

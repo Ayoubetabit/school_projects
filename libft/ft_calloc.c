@@ -6,19 +6,20 @@
 /*   By: atabit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 20:42:58 by atabit            #+#    #+#             */
-/*   Updated: 2025/10/18 21:18:43 by atabit           ###   ########.fr       */
+/*   Updated: 2025/10/24 09:32:27 by atabit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	int	*arr;
-	int	i;
+	size_t	i;
 
 	i = 0;
 	arr = malloc(nmemb * size);
-	if(!arr)
-		return(NULL);
+	if (!arr)
+		return (NULL);
 	while (i < (nmemb * size))
 	{
 		arr[i] = 0;

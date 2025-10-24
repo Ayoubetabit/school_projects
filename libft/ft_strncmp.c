@@ -9,6 +9,7 @@
 /*   Updated: 2025/10/18 10:55:13 by atabit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

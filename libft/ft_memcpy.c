@@ -6,9 +6,10 @@
 /*   By: atabit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:58:16 by atabit            #+#    #+#             */
-/*   Updated: 2025/10/18 10:09:41 by atabit           ###   ########.fr       */
+/*   Updated: 2025/10/24 09:34:54 by atabit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

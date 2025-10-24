@@ -9,18 +9,7 @@
 /*   Updated: 2025/10/19 09:23:37 by atabit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	l;
-
-	l = 0;
-	while (str[l])
-	{
-		l++;
-	}
-	return (l);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

@@ -18,6 +18,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	string = (char *)malloc((len + 1) * sizeof(char));
+	if (!s)
+	{
+		string[i] = '\0';
+		return(string);
+	}
 	if (!string)
 		return (NULL);
 	while (i < len)

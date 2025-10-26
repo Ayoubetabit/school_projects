@@ -34,6 +34,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = 0;
+	if (!s1)
+		return (ft_strdup(""));
+	if (!set)
+		return (ft_strdup(s1));
 	sl = ft_strlen(s1);
 	string = (char *)malloc((sl + 1) * sizeof(char));
 	if (!string)

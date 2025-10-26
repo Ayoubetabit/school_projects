@@ -41,7 +41,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len;
 	char	*string;
-
+	
+	if (!s1 && !s2)
+		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
 	len = totallen(s1, s2);
 	string = (char *)malloc((len + 1) * sizeof(char));
 	if (!string)

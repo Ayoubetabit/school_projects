@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
-// #include <string.h>
+#include <string.h>
 
 int main(void)
 {
@@ -20,8 +20,8 @@ int main(void)
     // printf("\n=== TEST ft_bzero ===\n");
     // char buf1[10] = "abcdefghi";
     // char buf2[10] = "abcdefghi";
-    // ft_bzero(buf1 + 3, 3);
-    // bzero(buf2 + 3, 3);
+    // ft_bzero(NULL, 3);
+    // // bzero(NULL, 3);
     // printf("ft_bzero result : ");
     // for (int i = 0; i < 9; i++) printf("%d ", buf1[i]);
     // printf("\n");
@@ -29,18 +29,18 @@ int main(void)
     // for (int i = 0; i < 9; i++) printf("%d ", buf2[i]);
     // printf("\n");
 
-    // // ========= Test ft_calloc =========
-    // printf("\n=== TEST ft_calloc ===\n");
-    // size_t sizes[] = {5, 10, 0};
-    // for (int i = 0; i < 3; i++)
-    // {
-    //     char *mine = ft_calloc(sizes[i], sizeof(char));
-    //     char *real = calloc(sizes[i], sizeof(char));
-    //     int same = memcmp(mine, real, sizes[i]) == 0;
-    //     printf("calloc(%zu, sizeof(char)) same? %s\n", sizes[i], same ? "✅ yes" : "❌ no");
-    //     free(mine);
-    //     free(real);
-    // }
+    // ========= Test ft_calloc =========
+    printf("\n=== TEST ft_calloc ===\n");
+    size_t sizes[] = {5, 10, 0};
+    for (int i = 0; i < 3; i++)
+    {
+        char *mine = ft_calloc(sizes[i], sizeof(char));
+        char *real = calloc(sizes[i], sizeof(char));
+        int same = memcmp(mine, real, sizes[i]) == 0;
+        printf("calloc(%zu, sizeof(char)) same? %s\n", sizes[i], same ? "✅ yes" : "❌ no");
+        free(mine);
+        free(real);
+    }
 
     // // ========= Test ft_isalnum =========
     // printf("\n=== TEST ft_isalnum ===\n");

@@ -14,19 +14,26 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	*arr;
+	int		*ptr;
 	size_t	i;
 
 	i = 0;
+	if (nmemb == 0 || size == 0)
+	{
+		ptr = malloc(1);
+		if (!ptr)
+			return (NULL);
+		return (ptr);
+	}
 	if (size != 0 && nmemb > SIZE_MAX / size)
-        return (NULL);
-	arr = malloc(nmemb * size);
-	if (!arr)
+		return (NULL);
+	ptr = malloc(nmemb * size);
+	if (!ptr)
 		return (NULL);
 	while (i < (nmemb * size))
 	{
-		arr[i] = 0;
+		ptr[i] = 0;
 		i++;
 	}
-	return ((void *)arr);
+	return ((void *)ptr);
 }

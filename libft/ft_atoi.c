@@ -18,23 +18,33 @@ static long long	maxlong(int x)
 	return (9223372036854775807);
 }
 
+int	skip_and_sign(const char *str, size_t *index)
+{
+	int	sign;
+
+	sign = 1;
+	while (str[*index] == 32 || (str[*index] >= 9 && str[*index] <= 13))
+		(*index)++;
+	if (str[*index] == '+' || str[*index] == '-')
+	{
+		if (str[*index] == '-')
+			sign = -1;
+		(*index)++;
+	}
+	return (sign);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	int			sign;
 	long long	n;
 	size_t		i;
 
-	sign = 1;
 	i = 0;
 	n = 0;
-	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
-	{
-		if (nptr[i] == '-')
-			sign = -1;
-		i++;
-	}
+	if (!nptr)
+		return (0);
+	sign = skip_and_sign(nptr, &i);
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		if (sign == -1 && n > (maxlong(1) - (nptr[i] - '0')) / 10)
